@@ -1,4 +1,5 @@
 import keys from '../constants/keys';
+import button from './button';
 import '../styles/styles.scss';
 
 const keysElements = keys.map((key) => {
