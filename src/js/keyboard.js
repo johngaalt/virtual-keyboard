@@ -19,7 +19,9 @@ export function keyboardClickListener() {
     if (button) {
       const primarySymbol = button.dataset.button;
       const { keyCode } = button.dataset;
-      if (!isServiceButton(keyCode)) {
+      if (isServiceButton(keyCode)) {
+        button.classList.toggle('button--active');
+      } else {
         updateTextAreaValue(primarySymbol);
       }
     }

@@ -5,6 +5,13 @@
   justify-content: space-between;
   padding: 5px;
 
+  &:active,
+  &--active {
+    background-color: #ff007f;
+  }
+
+
+
   &__symbol {
     &--primary {
       align-self: flex-start;
@@ -22,6 +29,7 @@
     }
   }
 }
+
 
 [data-button="Caps Lock"],
 [data-button="Shift"] {
