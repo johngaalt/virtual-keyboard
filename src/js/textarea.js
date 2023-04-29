@@ -1,0 +1,8 @@
+function createTextArea() {
+  const textArea = document.createElement('textarea');
+  textArea.classList.add('textarea');
+  textArea.cols = '140';
+  textArea.rows = '20';
+  return textArea;
+}
+export default createTextArea;

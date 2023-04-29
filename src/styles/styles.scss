@@ -1,2 +1,8 @@
 @import './keyboard';
 @import './button';
+@import './textarea';
+
+main {
+  max-width: 1048px;
+  margin: 0 auto;
+}

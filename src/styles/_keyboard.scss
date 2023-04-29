@@ -1,6 +1,4 @@
 .keyboard {
-  max-width: 1048px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(15, 60.5px);
   grid-template-rows: repeat(5, 1fr);
