@@ -10,8 +10,12 @@ function createButton(obj) {
   const button = document.createElement('button');
   button.classList.add('button');
   const primary = createSymbolElement(obj.primary);
-  const secondary = createSymbolElement(obj.secondary, false);
-  button.append(primary, secondary);
+  button.append(primary);
+
+  if (obj.secondary) {
+    const secondary = createSymbolElement(obj.secondary, false);
+    button.append(secondary);
+  }
   return button;
 }
 

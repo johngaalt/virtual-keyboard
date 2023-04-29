@@ -1,7 +1,6 @@
-import keys from '../constants/keys';
 import '../styles/styles.scss';
-import createButton from './button';
+import createKeyboard from './keyboard';
 
-const keysElements = keys.map((key) => createButton(key));
+const keyboard = createKeyboard();
 
-document.body.append(...keysElements);
+document.body.append(keyboard);
