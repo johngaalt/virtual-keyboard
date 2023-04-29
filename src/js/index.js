@@ -1,11 +1,13 @@
 import '../styles/styles.scss';
+import createInformationBlock from './info';
 import createKeyboard from './keyboard';
 import createTextArea from './textarea';
 
 const keyboard = createKeyboard();
 const textArea = createTextArea();
+const information = createInformationBlock();
 
 const main = document.createElement('main');
-main.append(textArea, keyboard);
+main.append(information, textArea, keyboard);
 
 document.body.append(main);
