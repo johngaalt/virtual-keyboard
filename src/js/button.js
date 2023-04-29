@@ -10,6 +10,7 @@ function createButton(obj) {
   const button = document.createElement('button');
   button.classList.add('button');
   button.dataset.button = obj.primary;
+  button.dataset.keyCode = obj.keyCode;
   const primary = createSymbolElement(obj.primary);
   button.append(primary);
 

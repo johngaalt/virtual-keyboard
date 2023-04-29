@@ -1,4 +1,5 @@
 import keys from '../constants/keys';
+import isServiceButton from '../utils/isServiceButton';
 import createButton from './button';
 import { updateTextAreaValue } from './textarea';
 
@@ -15,8 +16,13 @@ export function keyboardClickListener() {
   const keyboardElem = document.querySelector('.keyboard');
   keyboardElem.addEventListener('click', (event) => {
     const button = event.target.closest('button');
-    const primarySymbol = button.dataset.button;
-    updateTextAreaValue(primarySymbol);
+    if (button) {
+      const primarySymbol = button.dataset.button;
+      const { keyCode } = button.dataset;
+      if (!isServiceButton(keyCode)) {
+        updateTextAreaValue(primarySymbol);
+      }
+    }
   });
 }
 

@@ -41,6 +41,20 @@ const DIGITS = [
 ];
 
 const SPECIAL_SYMBOLS = [
+  { primary: '[', secondary: '{', keyCode: 219 },
+  { primary: ']', secondary: '}', keyCode: 221 },
+  { primary: '\\', secondary: '|', keyCode: 220 },
+  { primary: ';', secondary: ':', keyCode: 186 },
+  { primary: '\'', secondary: '"', keyCode: 222 },
+  { primary: ',', secondary: '<', keyCode: 188 },
+  { primary: '.', secondary: '>', keyCode: 190 },
+  { primary: '/', secondary: '?', keyCode: 191 },
+  { primary: '`', secondary: '~', keyCode: 192 },
+  { primary: '-', secondary: '_', keyCode: 189 },
+  { primary: '=', secondary: '+', keyCode: 187 },
+];
+
+export const SERVICE_BUTTONS = [
   { primary: 'Shift', keyCode: 16 },
   { primary: 'Ctrl', keyCode: 17 },
   { primary: 'Alt', keyCode: 18 },
@@ -55,23 +69,11 @@ const SPECIAL_SYMBOLS = [
   { primary: '⌫', keyCode: 8 },
   { primary: 'Del', keyCode: 46 },
   { primary: 'Enter', keyCode: 13 },
-  { primary: '[', secondary: '{', keyCode: 219 },
-  { primary: ']', secondary: '}', keyCode: 221 },
-  { primary: '\\', secondary: '|', keyCode: 220 },
-  { primary: ';', secondary: ':', keyCode: 186 },
-  { primary: '\'', secondary: '"', keyCode: 222 },
-  { primary: ',', secondary: '<', keyCode: 188 },
-  { primary: '.', secondary: '>', keyCode: 190 },
-  { primary: '/', secondary: '?', keyCode: 191 },
-  { primary: '`', secondary: '~', keyCode: 192 },
-  { primary: '-', secondary: '_', keyCode: 189 },
-  { primary: '=', secondary: '+', keyCode: 187 },
   { primary: 'RShift', keyCode: 16 },
   { primary: 'Win', keyCode: 91 },
   { primary: 'Space', keyCode: 32 },
   { primary: 'RCtrl', keyCode: 17 },
   { primary: 'LANG', keyCode: 322 },
-
 ];
 
 const orderedKeys = [
@@ -143,7 +145,7 @@ const orderedKeys = [
   'LANG',
 ];
 
-const keyboardArray = [...LETTERS, ...SPECIAL_SYMBOLS, ...DIGITS];
+const keyboardArray = [...LETTERS, ...SERVICE_BUTTONS, ...DIGITS, ...SPECIAL_SYMBOLS];
 
 const keys = keyboardArray.sort(
   (a, b) => orderedKeys.indexOf(a.primary) - orderedKeys.indexOf(b.primary),
