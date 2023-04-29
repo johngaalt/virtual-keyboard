@@ -9,6 +9,7 @@ function createSymbolElement(symbol, isPrimary = true) {
 function createButton(obj) {
   const button = document.createElement('button');
   button.classList.add('button');
+  button.dataset.button = obj.primary;
   const primary = createSymbolElement(obj.primary);
   button.append(primary);
 

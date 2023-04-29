@@ -52,7 +52,7 @@ const SPECIAL_SYMBOLS = [
   { primary: '↑', keyCode: 38 },
   { primary: '→', keyCode: 39 },
   { primary: '↓', keyCode: 40 },
-  { primary: 'Backspace', keyCode: 8 },
+  { primary: '⌫', keyCode: 8 },
   { primary: 'Del', keyCode: 46 },
   { primary: 'Enter', keyCode: 13 },
   { primary: '[', secondary: '{', keyCode: 219 },
@@ -70,6 +70,7 @@ const SPECIAL_SYMBOLS = [
   { primary: 'Win', keyCode: 91 },
   { primary: 'Space', keyCode: 32 },
   { primary: 'RCtrl', keyCode: 17 },
+  { primary: 'LANG', keyCode: 322 },
 
 ];
 
@@ -88,7 +89,7 @@ const orderedKeys = [
   '0',
   '-',
   '=',
-  'Backspace',
+  '⌫',
   'Tab',
   'Q',
   'W',
@@ -139,6 +140,7 @@ const orderedKeys = [
   '←',
   '↓',
   '→',
+  'LANG',
 ];
 
 const keyboardArray = [...LETTERS, ...SPECIAL_SYMBOLS, ...DIGITS];
