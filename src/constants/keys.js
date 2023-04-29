@@ -48,7 +48,6 @@ const SPECIAL_SYMBOLS = [
   { primary: 'Tab', keyCode: 9 },
   { primary: 'Caps Lock', keyCode: 20 },
   { primary: 'Esc', keyCode: 27 },
-  { primary: ' ', keyCode: 32 },
   { primary: '←', keyCode: 37 },
   { primary: '↑', keyCode: 38 },
   { primary: '→', keyCode: 39 },

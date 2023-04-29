@@ -1,11 +1,7 @@
 import keys from '../constants/keys';
-import button from './button';
 import '../styles/styles.scss';
+import createButton from './button';
 
-const keysElements = keys.map((key) => {
-  const div = document.createElement('span');
-  div.textContent = key.primary;
-  return div;
-});
+const keysElements = keys.map((key) => createButton(key));
 
 document.body.append(...keysElements);
