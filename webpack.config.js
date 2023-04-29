@@ -19,6 +19,7 @@ const config = {
       title: 'virtual-keyboard',
     }),
   ],
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
