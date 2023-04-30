@@ -11,6 +11,16 @@ function deleteSymbolBefore() {
   textArea.value = newValue;
 }
 
+function deleteSymbolAfter() {
+  const textArea = document.querySelector('.textarea');
+  const currentValue = textArea.value;
+  const cursorPosition = textArea.selectionStart;
+  const newValue = currentValue.slice(0, cursorPosition) + currentValue.slice(cursorPosition + 1);
+  textArea.value = newValue;
+  textArea.focus();
+  textArea.setSelectionRange(cursorPosition, cursorPosition);
+}
+
 function focusOnTextarea() {
   const textArea = document.querySelector('.textarea');
   textArea.focus();
@@ -35,6 +45,9 @@ function buttonClick(button) {
     case 'Enter':
       updateTextAreaValue('\n');
       focusOnTextarea();
+      break;
+    case 'Del':
+      deleteSymbolAfter();
       break;
     default:
       updateTextAreaValue(primarySymbol);
