@@ -11,14 +11,28 @@ function createTextArea() {
 
 export function updateTextAreaValue(buttonData) {
   let symbol;
+
   const lang = localStorage.getItem('language');
   const textArea = document.querySelector('.textarea');
-  if (lang === 'Russian') {
+  const isFirstRowSymbol = (buttonData.keyCode >= 48 && buttonData.keyCode <= 57)
+   || Number(buttonData.keyCode) === 192
+   || Number(buttonData.keyCode) === 187
+   || Number(buttonData.keyCode) === 189;
+
+  if (!isFirstRowSymbol && lang === 'Russian') {
     symbol = buttonData.secondary;
   } else {
     symbol = buttonData.button;
   }
-  if ((isCapsLockActive() && !isShiftActive()) || (isShiftActive() && !isCapsLockActive())) {
+
+  if (isFirstRowSymbol && isShiftActive()) {
+    symbol = buttonData.secondary;
+  }
+
+  if (
+    (isCapsLockActive() && !isShiftActive())
+    || (isShiftActive() && !isCapsLockActive())
+  ) {
     textArea.value += symbol.toUpperCase();
   } else {
     textArea.value += symbol.toLowerCase();
