@@ -1,4 +1,7 @@
-import isCapsLockActive from '../utils/isCapsLockActive';
+import isAltActive from '../utils/isAltActive';
+import isShiftActive from '../utils/isShiftActive';
+import removeActiveClass from '../utils/removeActiveClass';
+import createInformationBlock from './info';
 import { updateTextAreaValue } from './textarea';
 
 function toggleActiveButton(button) {
@@ -21,6 +24,19 @@ function deleteSymbolAfter() {
   textArea.value = newValue;
   textArea.focus();
   textArea.setSelectionRange(cursorPosition, cursorPosition);
+}
+
+function changeLanguage() {
+  if (isShiftActive() && isAltActive()) {
+    const lang = localStorage.getItem('language') || 'English';
+    if (lang === 'English') {
+      localStorage.setItem('language', 'Russian');
+    } else {
+      localStorage.setItem('language', 'English');
+    }
+    removeActiveClass();
+    createInformationBlock();
+  }
 }
 
 function focusOnTextarea() {
@@ -47,10 +63,12 @@ function buttonClick(button) {
     case 'Shift':
     case 'RShift':
       toggleActiveButton(button);
+      changeLanguage();
       break;
     case 'Alt':
     case 'RAlt':
       toggleActiveButton(button);
+      changeLanguage();
       break;
     case '⌫':
       deleteSymbolBefore();
