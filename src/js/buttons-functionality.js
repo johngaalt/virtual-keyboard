@@ -30,12 +30,18 @@ function buttonClick(button) {
   const { keyCode, button: primarySymbol } = button.dataset;
   switch (primarySymbol) {
     case 'Esc':
+    case 'Ctrl':
+    case 'RCtrl':
+    case 'Win':
+      console.log(`${primarySymbol} was clicked!`);
       break;
     case 'Tab':
       updateTextAreaValue('\t');
       focusOnTextarea();
       break;
     case 'Caps Lock':
+    case 'Shift':
+    case 'Alt':
       toggleActiveButton(button);
       break;
     case '⌫':
