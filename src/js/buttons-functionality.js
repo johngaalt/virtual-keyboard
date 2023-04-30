@@ -45,17 +45,17 @@ function focusOnTextarea() {
 }
 
 function buttonClick(button) {
-  const { button: primarySymbol } = button.dataset;
-  switch (primarySymbol) {
+  const buttonData = button.dataset;
+  switch (buttonData.button) {
     case 'Esc':
     case 'Ctrl':
     case 'RCtrl':
     case 'Win':
       // eslint-disable-next-line no-console
-      console.log(`${primarySymbol} was clicked!`);
+      console.log(`${buttonData.button} was clicked!`);
       break;
     case 'Tab':
-      updateTextAreaValue('\t');
+      updateTextAreaValue({ button: '\t', secondary: '\t' });
       focusOnTextarea();
       break;
     case 'Caps Lock':
@@ -76,14 +76,14 @@ function buttonClick(button) {
       focusOnTextarea();
       break;
     case 'Enter':
-      updateTextAreaValue('\n');
+      updateTextAreaValue({ button: '\n', secondary: '\n' });
       focusOnTextarea();
       break;
     case 'Del':
       deleteSymbolAfter();
       break;
     default:
-      updateTextAreaValue(primarySymbol);
+      updateTextAreaValue(buttonData);
       focusOnTextarea();
       break;
   }

@@ -11,6 +11,7 @@ function createButton(obj) {
   button.classList.add('button');
   button.dataset.button = obj.primary;
   button.dataset.keyCode = obj.keyCode;
+  button.dataset.secondary = obj.secondary;
   const primary = createSymbolElement(obj.primary);
   button.append(primary);
 

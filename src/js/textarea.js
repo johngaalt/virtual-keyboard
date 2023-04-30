@@ -9,8 +9,15 @@ function createTextArea() {
   return textArea;
 }
 
-export function updateTextAreaValue(symbol) {
+export function updateTextAreaValue(buttonData) {
+  let symbol;
+  const lang = localStorage.getItem('language');
   const textArea = document.querySelector('.textarea');
+  if (lang === 'Russian') {
+    symbol = buttonData.secondary;
+  } else {
+    symbol = buttonData.button;
+  }
   if ((isCapsLockActive() && !isShiftActive()) || (isShiftActive() && !isCapsLockActive())) {
     textArea.value += symbol.toUpperCase();
   } else {
