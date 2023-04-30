@@ -1,3 +1,5 @@
+import isCapsLockActive from '../utils/isCapsLockActive';
+
 function createTextArea() {
   const textArea = document.createElement('textarea');
   textArea.classList.add('textarea');
@@ -8,6 +10,10 @@ function createTextArea() {
 
 export function updateTextAreaValue(symbol) {
   const textArea = document.querySelector('.textarea');
-  textArea.value += symbol;
+  if (isCapsLockActive()) {
+    textArea.value += symbol.toUpperCase();
+  } else {
+    textArea.value += symbol.toLowerCase();
+  }
 }
 export default createTextArea;

@@ -1,7 +1,6 @@
 import keys from '../constants/keys';
-import isServiceButton from '../utils/isServiceButton';
 import createButton from './button';
-import { updateTextAreaValue } from './textarea';
+import buttonClick from './buttons-functionality';
 
 function createKeyboard() {
   const keysElements = keys.map((key) => createButton(key));
@@ -17,13 +16,7 @@ export function keyboardClickListener() {
   keyboardElem.addEventListener('click', (event) => {
     const button = event.target.closest('button');
     if (button) {
-      const primarySymbol = button.dataset.button;
-      const { keyCode } = button.dataset;
-      if (isServiceButton(keyCode)) {
-        button.classList.toggle('button--active');
-      } else {
-        updateTextAreaValue(primarySymbol);
-      }
+      buttonClick(button);
     }
   });
 }
