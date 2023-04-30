@@ -21,4 +21,10 @@ export function keyboardClickListener() {
   });
 }
 
+export function keyboardKeyDownListener() {
+  document.addEventListener('keydown', (event) => {
+    console.log(event);
+  });
+}
+
 export default createKeyboard;

@@ -1,6 +1,6 @@
 import '../styles/styles.scss';
 import createInformationBlock from './info';
-import createKeyboard, { keyboardClickListener } from './keyboard';
+import createKeyboard, { keyboardClickListener, keyboardKeyDownListener } from './keyboard';
 import createTextArea from './textarea';
 
 const keyboard = createKeyboard();
@@ -14,4 +14,5 @@ document.body.append(main);
 
 document.addEventListener('DOMContentLoaded', () => {
   keyboardClickListener();
+  keyboardKeyDownListener();
 });
