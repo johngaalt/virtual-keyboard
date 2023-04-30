@@ -61,3 +61,15 @@
   justify-content: center;
   align-items: center;
 }
+
+[data-button="Space"] span {
+  visibility: hidden;
+}
+
+[data-button="RAlt"],
+[data-button="RShift"],
+[data-button="RCtrl"] {
+  span:first-letter {
+    visibility: hidden;
+  }
+}

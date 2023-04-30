@@ -82,6 +82,10 @@ function buttonClick(button) {
     case 'Del':
       deleteSymbolAfter();
       break;
+    case 'Space':
+      updateTextAreaValue({ button: ' ', secondary: ' ' });
+      focusOnTextarea();
+      break;
     default:
       updateTextAreaValue(buttonData);
       focusOnTextarea();
