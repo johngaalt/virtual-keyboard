@@ -11,6 +11,11 @@ function deleteSymbolBefore() {
   textArea.value = newValue;
 }
 
+function focusOnTextarea() {
+  const textArea = document.querySelector('.textarea');
+  textArea.focus();
+}
+
 function buttonClick(button) {
   const { keyCode, button: primarySymbol } = button.dataset;
   switch (primarySymbol) {
@@ -18,15 +23,22 @@ function buttonClick(button) {
       break;
     case 'Tab':
       updateTextAreaValue('\t');
+      focusOnTextarea();
       break;
     case 'Caps Lock':
       toggleActiveButton(button);
       break;
     case '⌫':
       deleteSymbolBefore();
+      focusOnTextarea();
+      break;
+    case 'Enter':
+      updateTextAreaValue('\n');
+      focusOnTextarea();
       break;
     default:
       updateTextAreaValue(primarySymbol);
+      focusOnTextarea();
       break;
   }
 //   if (isServiceButton(keyCode)) {
