@@ -1,3 +1,4 @@
+import isCapsLockActive from '../utils/isCapsLockActive';
 import { updateTextAreaValue } from './textarea';
 
 function toggleActiveButton(button) {
@@ -15,7 +16,8 @@ function deleteSymbolAfter() {
   const textArea = document.querySelector('.textarea');
   const currentValue = textArea.value;
   const cursorPosition = textArea.selectionStart;
-  const newValue = currentValue.slice(0, cursorPosition) + currentValue.slice(cursorPosition + 1);
+  const newValue = currentValue.slice(0, cursorPosition)
+    + currentValue.slice(cursorPosition + 1);
   textArea.value = newValue;
   textArea.focus();
   textArea.setSelectionRange(cursorPosition, cursorPosition);
@@ -40,8 +42,14 @@ function buttonClick(button) {
       focusOnTextarea();
       break;
     case 'Caps Lock':
+      toggleActiveButton(button);
+      break;
     case 'Shift':
+    case 'RShift':
+      toggleActiveButton(button);
+      break;
     case 'Alt':
+    case 'RAlt':
       toggleActiveButton(button);
       break;
     case '⌫':
@@ -60,9 +68,9 @@ function buttonClick(button) {
       focusOnTextarea();
       break;
   }
-//   if (isServiceButton(keyCode)) {
-//     toggleActiveButton(button);
-//   }
+  //   if (isServiceButton(keyCode)) {
+  //     toggleActiveButton(button);
+  //   }
 }
 
 export default buttonClick;
