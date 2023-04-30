@@ -45,12 +45,13 @@ function focusOnTextarea() {
 }
 
 function buttonClick(button) {
-  const { keyCode, button: primarySymbol } = button.dataset;
+  const { button: primarySymbol } = button.dataset;
   switch (primarySymbol) {
     case 'Esc':
     case 'Ctrl':
     case 'RCtrl':
     case 'Win':
+      // eslint-disable-next-line no-console
       console.log(`${primarySymbol} was clicked!`);
       break;
     case 'Tab':
@@ -86,9 +87,6 @@ function buttonClick(button) {
       focusOnTextarea();
       break;
   }
-  //   if (isServiceButton(keyCode)) {
-  //     toggleActiveButton(button);
-  //   }
 }
 
 export default buttonClick;
