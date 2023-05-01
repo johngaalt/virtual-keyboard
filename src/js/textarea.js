@@ -4,7 +4,7 @@ import isShiftActive from '../utils/isShiftActive';
 function createTextArea() {
   const textArea = document.createElement('textarea');
   textArea.classList.add('textarea');
-  textArea.cols = '140';
+  textArea.cols = '93';
   textArea.rows = '20';
   return textArea;
 }
