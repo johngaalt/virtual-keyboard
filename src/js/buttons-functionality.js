@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import isAltActive from '../utils/isAltActive';
 import isShiftActive from '../utils/isShiftActive';
 import removeActiveClass from '../utils/removeActiveClass';
@@ -30,9 +31,18 @@ function changeLanguage() {
   if (isShiftActive() && isAltActive()) {
     const lang = localStorage.getItem('language') || 'English';
     if (lang === 'English') {
-      localStorage.setItem('language', 'Russian');
+      localStorage.setItem('language', 'Русский');
+      const buttons = document.querySelectorAll('.button__symbol--secondary');
+      console.log(buttons);
+      buttons.forEach((button) => {
+        button.style.color = 'wheat';
+      });
     } else {
       localStorage.setItem('language', 'English');
+      const buttons = document.querySelectorAll('.button__symbol--secondary');
+      buttons.forEach((button) => {
+        button.style.color = 'white';
+      });
     }
     removeActiveClass();
     createInformationBlock();
