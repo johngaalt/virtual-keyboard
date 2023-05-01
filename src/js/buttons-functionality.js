@@ -51,6 +51,7 @@ function buttonClick(button) {
     case 'Ctrl':
     case 'RCtrl':
     case 'Win':
+    case 'LANG':
       // eslint-disable-next-line no-console
       console.log(`${buttonData.button} was clicked!`);
       break;
