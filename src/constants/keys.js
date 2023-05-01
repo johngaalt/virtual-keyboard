@@ -44,11 +44,21 @@ const SPECIAL_SYMBOLS = [
   { primary: '[', secondary: '{', keyCode: 219 },
   { primary: ']', secondary: '}', keyCode: 221 },
   { primary: '\\', secondary: '|', keyCode: 220 },
-  { primary: ';', secondary: ':', keyCode: 186 },
-  { primary: '\'', secondary: '"', keyCode: 222 },
-  { primary: ',', secondary: '<', keyCode: 188 },
-  { primary: '.', secondary: '>', keyCode: 190 },
-  { primary: '/', secondary: '?', keyCode: 191 },
+  {
+    primary: ';', secondary: ':', extra: 'Ж', keyCode: 186,
+  },
+  {
+    primary: '\'', secondary: '"', extra: 'Э', keyCode: 222,
+  },
+  {
+    primary: ',', secondary: '<', extra: 'Б', keyCode: 188,
+  },
+  {
+    primary: '.', secondary: '>', extra: 'Ю', keyCode: 190,
+  },
+  {
+    primary: '/', secondary: '?', extra: '.', keyCode: 191,
+  },
   { primary: '`', secondary: '~', keyCode: 192 },
   { primary: '-', secondary: '_', keyCode: 189 },
   { primary: '=', secondary: '+', keyCode: 187 },

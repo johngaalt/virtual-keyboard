@@ -11,13 +11,19 @@ function createButton(obj) {
   button.classList.add('button');
   button.dataset.button = obj.primary;
   button.dataset.keyCode = obj.keyCode;
-  button.dataset.secondary = obj.secondary;
   const primary = createSymbolElement(obj.primary);
   button.append(primary);
 
   if (obj.secondary) {
+    button.dataset.secondary = obj.secondary;
     const secondary = createSymbolElement(obj.secondary, false);
     button.append(secondary);
+  }
+
+  if (obj.extra) {
+    button.dataset.extra = obj.extra;
+    const extra = createSymbolElement(obj.extra, false);
+    button.append(extra);
   }
   return button;
 }
