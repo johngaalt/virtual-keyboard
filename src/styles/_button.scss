@@ -1,0 +1,75 @@
+.button {
+  height: 50px;
+  max-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  transition: background-color 0.5s;
+  user-select: none;
+
+  &:active,
+  &--active {
+    background-color: #ff007f;
+    border: none;
+    transition: background-color 0.5s;
+  }
+
+  &__symbol {
+    &--primary {
+      align-self: flex-start;
+
+      &:not(&:only-child) {
+        font-weight: 600;
+      }
+      &:only-child {
+        align-self: center;
+      }
+    }
+
+    &--secondary {
+      align-self: flex-end;
+    }
+  }
+}
+
+[data-button="Caps Lock"],
+[data-button="Shift"] {
+  grid-column: 1 / 3;
+}
+
+[data-button="Enter"],
+[data-button="RShift"] {
+  grid-column: 14 / 16;
+}
+
+[data-button="Space"] {
+  grid-column: 4 / 10;
+}
+
+[data-button="⌫"],
+[data-button="Del"],
+[data-button="Enter"],
+[data-button="RShift"],
+[data-button="LANG"] {
+  justify-content: flex-end;
+}
+
+[data-button="←"],
+[data-button="↑"],
+[data-button="→"],
+[data-button="↓"] {
+  justify-content: center;
+  align-items: center;
+}
+
+[data-button="Space"] span {
+  visibility: hidden;
+}
+
+[data-button="RAlt"],
+[data-button="RShift"],
+[data-button="RCtrl"] {
+  span:first-letter {
+    visibility: hidden;
+  }
+}
