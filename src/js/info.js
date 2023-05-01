@@ -13,9 +13,9 @@ function createInformationBlock() {
   let text;
 
   if (lang === 'English') {
-    text = `Language: ${lang}. To switch language press SHIFT + ALT`;
+    text = `Language: ${lang}. To switch language press SHIFT + ALT. \nWindows 11 keyboard was used as example`;
   } else {
-    text = `Язык: ${lang}. Для переключения языка нажмите SHIFT + ALT`;
+    text = `Язык: ${lang}. Для переключения языка нажмите SHIFT + ALT. \nДля примера использована Windows 11 клавиатура`;
   }
 
   info.textContent = text;
