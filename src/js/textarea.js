@@ -19,7 +19,7 @@ export function updateTextAreaValue(buttonData) {
    || Number(buttonData.keyCode) === 187
    || Number(buttonData.keyCode) === 189;
 
-  if (!isFirstRowSymbol && lang === 'Russian') {
+  if (!isFirstRowSymbol && lang === 'Русский') {
     symbol = buttonData.secondary;
   } else {
     symbol = buttonData.button;

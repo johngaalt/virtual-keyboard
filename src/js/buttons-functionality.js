@@ -33,7 +33,6 @@ function changeLanguage() {
     if (lang === 'English') {
       localStorage.setItem('language', 'Русский');
       const buttons = document.querySelectorAll('.button__symbol--secondary');
-      console.log(buttons);
       buttons.forEach((button) => {
         button.style.color = 'wheat';
       });
