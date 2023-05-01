@@ -64,6 +64,10 @@
 [data-button="↓"] {
   justify-content: center;
   align-items: center;
+
+  .button__symbol--secondary:first-letter {
+    visibility: hidden;
+  }
 }
 
 [data-button="Space"] span {
@@ -74,15 +78,6 @@
 [data-button="RShift"],
 [data-button="RCtrl"] {
   span:first-letter {
-    visibility: hidden;
-  }
-}
-
-[data-button="←"],
-[data-button="↑"],
-[data-button="→"],
-[data-button="↓"] {
-  .button__symbol--secondary:first-letter {
     visibility: hidden;
   }
 }
