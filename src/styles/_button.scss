@@ -6,6 +6,8 @@
   padding: 5px;
   transition: background-color 0.5s;
   user-select: none;
+  background-color: #414245;
+  color: white;
 
   &:active,
   &--active {
@@ -70,6 +72,15 @@
 [data-button="RShift"],
 [data-button="RCtrl"] {
   span:first-letter {
+    visibility: hidden;
+  }
+}
+
+[data-button="←"],
+[data-button="↑"],
+[data-button="→"],
+[data-button="↓"] {
+  .button__symbol--secondary:first-letter {
     visibility: hidden;
   }
 }

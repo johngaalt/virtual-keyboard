@@ -23,7 +23,19 @@ export function keyboardClickListener() {
 
 export function keyboardKeyDownListener() {
   document.addEventListener('keydown', (event) => {
-    console.log(event);
+    const key = event.keyCode;
+    const virtualKey = document.querySelector(`[data-key-code="${key}"]`);
+    if (virtualKey) {
+      virtualKey.classList.add('button--active');
+    }
+  });
+
+  document.addEventListener('keyup', (event) => {
+    const key = event.keyCode;
+    const virtualKey = document.querySelector(`[data-key-code="${key}"]`);
+    if (virtualKey) {
+      virtualKey.classList.remove('button--active');
+    }
   });
 }
 
