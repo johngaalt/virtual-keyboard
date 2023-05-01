@@ -103,4 +103,18 @@ function buttonClick(button) {
   }
 }
 
+export function buttonKeydown(event, button) {
+  switch (event.keyCode) {
+    case 9:
+      event.preventDefault();
+      focusOnTextarea();
+      updateTextAreaValue({ button: '\t', secondary: '\t' });
+      break;
+
+    default:
+      toggleActiveButton(button);
+      break;
+  }
+}
+
 export default buttonClick;

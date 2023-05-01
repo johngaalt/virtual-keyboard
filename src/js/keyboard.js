@@ -1,6 +1,6 @@
 import keys from '../constants/keys';
 import createButton from './button';
-import buttonClick from './buttons-functionality';
+import buttonClick, { buttonKeydown } from './buttons-functionality';
 
 function createKeyboard() {
   const keysElements = keys.map((key) => createButton(key));
@@ -26,7 +26,7 @@ export function keyboardKeyDownListener() {
     const key = event.keyCode;
     const virtualKey = document.querySelector(`[data-key-code="${key}"]`);
     if (virtualKey) {
-      virtualKey.classList.add('button--active');
+      buttonKeydown(event, virtualKey);
     }
   });
 
