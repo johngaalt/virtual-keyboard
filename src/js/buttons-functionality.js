@@ -110,6 +110,14 @@ export function buttonKeydown(event, button) {
       focusOnTextarea();
       updateTextAreaValue({ button: '\t', secondary: '\t' });
       break;
+    case 16:
+      toggleActiveButton(button);
+      changeLanguage();
+      break;
+    case 18:
+      toggleActiveButton(button);
+      changeLanguage();
+      break;
 
     default:
       toggleActiveButton(button);
