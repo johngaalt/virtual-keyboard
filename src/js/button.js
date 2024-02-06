@@ -1,5 +1,7 @@
 function createSymbolElement(symbol, isPrimary = true) {
-  const spanClass = isPrimary ? 'button__symbol--primary' : 'button__symbol--secondary';
+  const spanClass = isPrimary
+    ? 'button__symbol--primary'
+    : 'button__symbol--secondary';
   const span = document.createElement('span');
   span.classList.add('button__symbol', spanClass);
   span.textContent = symbol;

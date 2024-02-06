@@ -45,19 +45,34 @@ const SPECIAL_SYMBOLS = [
   { primary: ']', secondary: '}', keyCode: 221 },
   { primary: '\\', secondary: '|', keyCode: 220 },
   {
-    primary: ';', secondary: ':', extra: 'Ж', keyCode: 186,
+    primary: ';',
+    secondary: ':',
+    extra: 'Ж',
+    keyCode: 186,
   },
   {
-    primary: '\'', secondary: '"', extra: 'Э', keyCode: 222,
+    primary: "'",
+    secondary: '"',
+    extra: 'Э',
+    keyCode: 222,
   },
   {
-    primary: ',', secondary: '<', extra: 'Б', keyCode: 188,
+    primary: ',',
+    secondary: '<',
+    extra: 'Б',
+    keyCode: 188,
   },
   {
-    primary: '.', secondary: '>', extra: 'Ю', keyCode: 190,
+    primary: '.',
+    secondary: '>',
+    extra: 'Ю',
+    keyCode: 190,
   },
   {
-    primary: '/', secondary: '?', extra: '.', keyCode: 191,
+    primary: '/',
+    secondary: '?',
+    extra: '.',
+    keyCode: 191,
   },
   { primary: '`', secondary: '~', keyCode: 192 },
   { primary: '-', secondary: '_', keyCode: 189 },
@@ -128,7 +143,7 @@ const orderedKeys = [
   'K',
   'L',
   ';',
-  '\'',
+  "'",
   'Enter',
   'Shift',
   'Z',
@@ -155,7 +170,12 @@ const orderedKeys = [
   'LANG',
 ];
 
-const keyboardArray = [...LETTERS, ...SERVICE_BUTTONS, ...DIGITS, ...SPECIAL_SYMBOLS];
+const keyboardArray = [
+  ...LETTERS,
+  ...SERVICE_BUTTONS,
+  ...DIGITS,
+  ...SPECIAL_SYMBOLS,
+];
 
 const keys = keyboardArray.sort(
   (a, b) => orderedKeys.indexOf(a.primary) - orderedKeys.indexOf(b.primary),
